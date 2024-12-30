@@ -1,6 +1,7 @@
-const userService = require('../services/user.service');
+const userService = require('../services/user.service')
 const userModel = require('../models/user.model')
-const { validationResult } = require('express-validator');
+const { validationResult } = require('express-validator')
+const redisClient = require('../services/redis.service')
 
 module.exports.createUserController = async (req, res) => {
     const errors = validationResult(req);
